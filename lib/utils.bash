@@ -620,6 +620,8 @@ plugin_executables() {
       if is_executable "$executable_file"; then
         if [[ "$executable_file" == *".exe" ]]; then
           executable_file=${executable_file::-4}
+        elif [[ "$executable_file" == *".ps1" ]]; then
+          continue
         fi
         printf "%s\n" "$executable_file"
       fi
